@@ -11,5 +11,6 @@ export class AppComponent {
   constructor(private moleculeservice: MoleculeService)
   {
     this.data = moleculeservice.getData();
+    
   }
 }
