@@ -4,7 +4,7 @@
       {{data.name}}
       <ul>
         <li *ngFor="let item of data.items">
-          <ul>{{item.name}}
+          <ul><a (click)="getParent(item)">{{item.name}}</a>
             <li *ngFor="let children of item.children | sort">
               <ul>
                 <a (click)="getChildren(children)">{{children.name}}</a>
