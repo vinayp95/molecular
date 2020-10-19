@@ -1,18 +1,24 @@
 <div>
-  {{data.name}}
   <ul>
-    <li *ngFor="let item of data.items">
-      <ul>{{item.name}}
-        <li *ngFor="let children of item.children | sort">
-          <ul>
-            <a (click)="getChildren(children)">{{children.name}}</a>
-            <div *ngIf="children.items && children.items.length > 0 ">
-              <li *ngFor="let innerChildren of children.items">
-                  {{innerChildren.name}}
-                </li>
-            </div>
+    <li>
+      {{data.name}}
+      <ul>
+        <li *ngFor="let item of data.items">
+          <ul>{{item.name}}
+            <li *ngFor="let children of item.children | sort">
+              <ul>
+                <a (click)="getChildren(children)">{{children.name}}</a>
+                <div *ngIf="children.items && children.items.length > 0 ">
+                  <ul>
+                    <li *ngFor="let innerChildren of children.items">
+                      {{innerChildren.name}}
+                    </li>
+                  </ul>
+                </div>
+              </ul>
+            </li>
           </ul>
-          </li>
+        </li>
       </ul>
     </li>
   </ul>
